@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.48",
+    "react-scroll": "^1.9.0",
+    "typed.js": "^2.1.0"
+  }
+}
