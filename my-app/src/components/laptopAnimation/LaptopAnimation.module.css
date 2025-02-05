@@ -1,0 +1,20 @@
+.animationContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 9999;
+}
+
+.animationContainer>div {
+  width: 95vmin !important;
+  /* 뷰포트의 작은 쪽 기준 95% */
+  height: 95vmin !important;
+  max-width: 1200px;
+  max-height: 1200px;
+}

@@ -1,0 +1,53 @@
+.sectionNav {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  pointer-events: auto;
+  background: transparent;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  list-style: none;
+  position: relative;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.label {
+  color: #666;
+  font-size: 1.2vw;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+}
+
+.navItem:hover .label,
+.active .label {
+  opacity: 0.5;
+  transform: translateX(0);
+}
+
+.navItem:hover .dot,
+.active .dot {
+  background-color: #11691a;
+  transform: scale(1.2);
+}
+
+.active .label {
+  color: #11691a;
+  font-weight: 600;
+}
