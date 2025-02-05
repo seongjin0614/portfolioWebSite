@@ -1,43 +1,42 @@
-import { useState } from 'react';
 import styles from './Projects.module.css';
 import ProjectCard from '../ProjectCard/ProjectCard';
-import ProjectModal from '../ProjectModal/ProjectModal';
+import vemoImage from '../../assets/project/vemo.png';
+import pintosImage from '../../assets/project/pintos.png';
+import portfolioImage from '../../assets/project/portfolio.png';
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null);
-
   const projects = [
     {
       id: 1,
+      title: "VEMO",
+      description: "영상에 직접 기록하여 나만의 기록을 만들어보세요",
+      thumbnail: vemoImage,
+      skills: ["React", "Next.js", "TypeScript", "Vercel"],
+      github: "https://github.com/username/vemo",
+      demo: "https://vemo.com"
+    },
+    {
+      id: 2,
+      title: "PintOS",
+      description: "운영체제의 핵심 기능을 구현한 교육용 운영체제 프로젝트",
+      thumbnail: pintosImage,
+      skills: ["C", "OS", "Data Structure", "Git"],
+      github: "https://github.com/username/pintos",
+      demo: "https://pintos-doc.com"
+    },
+    {
+      id: 3,
       title: "Portfolio",
       description: "React와 다양한 라이브러리를 활용한 포트폴리오 웹사이트",
-      thumbnail: "/images/portfolio-thumb.png",
+      thumbnail: portfolioImage,
       skills: ["React", "CSS Module", "Fullpage.js"],
       github: "https://github.com/username/portfolio",
-      demo: "https://portfolio.com",
-      details: {
-        overview: "개인 포트폴리오 웹사이트 제작 프로젝트",
-        features: [
-          "Fullpage.js를 활용한 섹션 단위 스크롤",
-          "반응형 디자인 구현",
-          "CSS Module을 활용한 스타일링"
-        ],
-        implementation: [
-          "React와 Fullpage.js 연동",
-          "컴포넌트 기반 아키텍처 설계",
-          "모듈화된 CSS 관리"
-        ]
-      }
-    },
-    // 다른 프로젝트들 추가...
+      demo: "https://portfolio.com"
+    }
   ];
 
   const handleCardClick = (project) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
+    window.open(project.demo, '_blank');
   };
 
   return (
@@ -52,12 +51,6 @@ export default function Projects() {
           />
         ))}
       </div>
-      {selectedProject && (
-        <ProjectModal
-          project={selectedProject}
-          onClose={handleCloseModal}
-        />
-      )}
     </section>
   );
 } 
