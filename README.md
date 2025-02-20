@@ -5,10 +5,9 @@
 
 ---
 
-## 🔗 **배포 링크 및 GitHub 저장소**
+## 🔗 **배포 링크**
 
 - 🚀 **배포 링크**: 개발 진행 중
-- 🗂 **GitHub 저장소**: [GitHub Repository](https://github.com/seongjin0614/portfolioWebSite)
 
 ---
 
