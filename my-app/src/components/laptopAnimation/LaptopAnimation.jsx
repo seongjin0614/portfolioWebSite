@@ -1,4 +1,5 @@
-import Lottie from "lottie-react";
+import { Suspense, lazy } from 'react';
+const Lottie = lazy(() => import('lottie-react'));
 import laptopAnimation from "../../assets/laptop.json"; // JSON 파일 import
 import { useEffect } from "react";
 import styles from './LaptopAnimation.module.css';
@@ -15,11 +16,13 @@ export default function LaptopAnimation({ onComplete }) {
 
   return (
     <div className={styles.animationContainer}>
-      <Lottie
-        animationData={laptopAnimation}
-        loop={false}
-        style={{ width: "100%", height: "100%" }}
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Lottie
+          animationData={laptopAnimation}
+          loop={false}
+          style={{ width: "100%", height: "100%" }}
+        />
+      </Suspense>
     </div>
   );
 }
