@@ -1,0 +1,31 @@
+.sectionTitle {
+  width: 80vw;
+  margin: auto;
+
+  font-size: 3rem;
+}
+
+
+
+/* OOO개발자 대제목 */
+.AboutMe2 {
+  font-size: 2rem;
+  width: 80vw;;
+  margin: auto;
+}
+
+/* OOO개발자 */
+.developer {
+  width: 80vw;
+
+  border-radius: 10px;
+  background-color: grey;
+  color: rgb(218, 218, 218);
+
+  margin: auto;
+}
+
+
+.developer .title {
+  font-size: 2rem;
+}

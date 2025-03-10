@@ -7,6 +7,8 @@ import './HomePage.css';
 import IntroSection from "../sections/IntroSection";
 import AboutMe from "../sections/AboutMe";
 import Skills from '../sections/Skills';
+import Project from '../sections/Project';
+import ThankYou from '../sections/ThankYou.jsx';
 import VscNav from "../components/VscNav"; // VS Code 스타일 네비게이션 추가
 
 export default function HomePage() {
@@ -47,9 +49,11 @@ export default function HomePage() {
 
       {/* ✅ fullpage.js가 적용되는 컨테이너 */}
       <div id="fullpage">
-        <div className="section"><IntroSection /></div>
-        <div className="section"><AboutMe /></div>
-        <div className="section"><Skills /></div>
+        <IntroSection className={"section"} />
+        <AboutMe className={"section"} />
+        <Skills className={"section"} />
+        <Project className={"section"} />
+        <ThankYou className={"section"} />
       </div>
     </div>
   );

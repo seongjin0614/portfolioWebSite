@@ -9,10 +9,13 @@
   justify-content: space-between;
 }
 
+
 .typedWrapper {
   margin-top: 15vh;
   padding-left: 4vw;
-  padding-right: 4vw;
+
+  max-width: 60vw;
+  overflow: hidden;
 }
 
 
@@ -44,6 +47,17 @@
 /* 프로필카드 */
 .profileContainer {
   background-color: white;
+
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5vw;
+  
+  padding: 0.5vh 0.5vw;
+  margin: auto;
+  height: 60vh;
+
+  border-radius: 10px;
 }
 
 

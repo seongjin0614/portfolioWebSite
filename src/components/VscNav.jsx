@@ -5,8 +5,9 @@ export default function VscNav({activeSection, scrollToSection}) {
     { name: "📂 portfolio", type: "folder" },
     { name: "📄 Intro.jsx", type: "file", index: 0 },
     { name: "📄 About.jsx", type: "file", index: 1 },
-    { name: "📄 Projects.jsx", type: "file", index: 2 },
-    { name: "📄 Contact.jsx", type: "file", index: 3 },
+    { name: "📄 skills.jsx", type: "file", index: 2 },
+    { name: "📄 Project.jsx", type: "file", index: 3 },
+    { name: "📄 ThankYou.jsx", type: "file", index: 4 }
   ];
 
 
