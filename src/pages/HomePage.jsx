@@ -1,4 +1,6 @@
 import IntroSection from "../sections/IntroSection";
+import AboutMe from "../sections/AboutMe";
+import Skills from '../sections/Skills';
 
 import fullpage from "fullpage.js"
 import "fullpage.js/dist/fullpage.min.css"
@@ -22,6 +24,8 @@ export default function HomePage() {
     // section은 className이 "section"로 할당 해야함
     <div id="fullpage">
       <IntroSection className="section"/>
+      <AboutMe className="section"/>
+      <Skills className='section' />
       <div className="section">섹션 1</div>
       <div className="section">섹션 2</div>
       <div>섹션 3</div>

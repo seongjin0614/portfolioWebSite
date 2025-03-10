@@ -1,3 +1,8 @@
+import ProfileCard from "../components/ProfileCard";
+import Header from "../components/Header";
+
+import './IntroSection.css'
+
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
@@ -27,19 +32,30 @@ export default function IntroSection({className}) {
 
   return (
     <div className={className}>
-      
-      <div>
-        <div>
-          <span>Function</span><span> FrontEnd_Developer</span><span>()</span><span></span>
+      <div className="introSection">
+        <div className="typedWrapper">
+          <div className="fixedTyped">
+            <span className="function">function</span>
+            <span className="functionName"> FrontendDeveloper</span>
+            <span className="parentheses">()</span>
+            <span className="curlyBraces">{"{"}</span>
+          </div>
+
+          <div>
+            <span
+              className="typedContent"
+              ref={textRef} />
+          </div>
+
+          <div className="underFixedTyped">
+            <span className="curlyBraces">{"}"}</span>
+          </div>
         </div>
-        <div>
-          <span ref={textRef}></span>
+
+        <div className="profileContainer">
+          <ProfileCard />
         </div>
       </div>
-
-      <div>
-      </div>
-
     </div>
   )
 }
