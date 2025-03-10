@@ -9,34 +9,47 @@
   justify-content: space-between;
 }
 
+.typedWrapper {
+  margin-top: 15vh;
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
 
 
 /* typed.js 크기 및 색상 설정 */
 .function {
-  font-size: 6rem;
+  font-size: 5rem;
   color: rgb(28, 80, 152);
 }
 
 .functionName {
-  font-size: 6rem;
+  font-size: 5rem;
   color: rgb(255, 249, 170);
 }
 
 .parentheses {
-  font-size: 6rem;
+  font-size: 5rem;
   color: blueviolet;
 }
 
 .curlyBraces {
-  font-size: 6rem;
+  font-size: 5rem;
   color: rgb(255, 221, 1);
 }
 
 .typedContent {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 /* 프로필카드 */
 .profileContainer {
   background-color: white;
+}
+
+
+/* typed.js 관련 설정 */
+
+/* 커서 */
+.typed-cursor {
+  font-size: 5rem;
 }

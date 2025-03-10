@@ -1,34 +1,56 @@
+import { useEffect, useState } from "react";
+import fullpage from "fullpage.js";
+import "fullpage.js/dist/fullpage.min.css";
+
+import './HomePage.css';
+
 import IntroSection from "../sections/IntroSection";
 import AboutMe from "../sections/AboutMe";
 import Skills from '../sections/Skills';
-
-import fullpage from "fullpage.js"
-import "fullpage.js/dist/fullpage.min.css"
-
-import {useEffect} from "react";
+import VscNav from "../components/VscNav"; // VS Code 스타일 네비게이션 추가
 
 export default function HomePage() {
+  const [activeSection, setActiveSection] = useState(0);
 
-  // 풀페이지
   useEffect(() => {
-    new fullpage("#fullpage", {
-      autoScrolling: true,
-      navigation: true,
-      anchors: ["firstPage", "secondPage", "thirdPage"]
-    });
+    // ✅ fullpage.js 초기화
+    if (!window.fullpage_api) {
+      window.fullpage_api = new fullpage("#fullpage", {
+        autoScrolling: true,
+        navigation: true,
+        anchors: ["intro", "about", "skills"],
+        onLeave: function (origin, destination) {
+          setActiveSection(destination.index);
+        }
+      });
+    }
+
+    return () => {
+      // ✅ 언마운트될 때 fullpage.js 제거 (중복 실행 방지)
+      if (window.fullpage_api) {
+        window.fullpage_api.destroy("all");
+        delete window.fullpage_api;
+      }
+    };
   }, []);
 
-  return (
+  const scrollToSection = (index) => {
+    if (window.fullpage_api) {
+      window.fullpage_api.moveTo(index + 1);
+    }
+  };
 
-    // fullpage를 적용하려는 태그의 id를 "fullpage"로 할당 해야함
-    // section은 className이 "section"로 할당 해야함
-    <div id="fullpage">
-      <IntroSection className="section"/>
-      <AboutMe className="section"/>
-      <Skills className='section' />
-      <div className="section">섹션 1</div>
-      <div className="section">섹션 2</div>
-      <div>섹션 3</div>
+  return (
+    <div className="homepage">
+      {/* ✅ VS Code 스타일 네비게이션 추가 */}
+      <VscNav activeSection={activeSection} scrollToSection={scrollToSection} />
+
+      {/* ✅ fullpage.js가 적용되는 컨테이너 */}
+      <div id="fullpage">
+        <div className="section"><IntroSection /></div>
+        <div className="section"><AboutMe /></div>
+        <div className="section"><Skills /></div>
+      </div>
     </div>
-  )
+  );
 };

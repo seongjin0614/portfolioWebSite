@@ -1,0 +1,9 @@
+.homepage {
+  display: flex; 
+}
+
+#fullpage {
+  margin-left: 11.75vw;
+  /* width: calc(100vw - 200px); */
+  height: 100vh;
+}
